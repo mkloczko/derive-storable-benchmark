@@ -108,30 +108,9 @@ singularTests =
           ]
       ]
   ]
--- With get number of fields it forces the rewrite rules here.
-getterTest = 
-    [ bgroup "C1" $ 
-        [--bench "flipped 0" $ nf ((flip internalGetOffset) 0) (from c1_def) 
-        bench "0" $ nf (getOffset (c1_def)) 0
-        ]
-    , bgroup "C2" $
-        [--bench "flipped 0" $ nf ((flip internalGetOffset) 0) (from c2_def) 
-        bench "0" $ nf (getOffset (c2_def)) 0
-        --,bench "flipped 1" $ nf ((flip internalGetOffset) 1) (from c2_def) 
-        ,bench "1" $ nf (getOffset (c2_def)) 1
-        --,bench "flipped 2" $ nf ((flip internalGetOffset) 2) (from c2_def) 
-        ,bench "2" $ nf (getOffset (c2_def)) 2
-        ]
-    ]
 
-getterRuntimeIxTest = do 
-     putStrLn "provide an index"
-     n <- read <$> getLine
-     return [bench ("runtime ix: " ++ show n) $ nf (getOffset (c2_def)) n]
 
 
 -- Our benchmark harness.
-main = do 
-    defaultMain $ [ bgroup "internals" getterTest, bgroup "comparison" singularTests]
-    -- defaultMain $ singularTests
+main = defaultMain $ singularTests
 
