@@ -26,23 +26,23 @@ mallocFree a = do
     free ptr
 
 singularTests = 
-   [ bgroup "mallocfree" $ 
-      [ bgroup "Handwritten" $
-          [ bench "C1" $ nfIO (mallocFree c1hw_def)
-          , bench "C2" $ nfIO (mallocFree c2hw_def)
-          , bench "C3" $ nfIO (mallocFree c3hw_def)
-          , bench "C4" $ nfIO (mallocFree c4hw_def)
-          , bench "C5" $ nfIO (mallocFree c5hw_def)
-          ]
-      , bgroup "GStorable" $
-          [ bench "C1" $ nfIO (mallocFree c1_def)
-          , bench "C2" $ nfIO (mallocFree c2_def)
-          , bench "C3" $ nfIO (mallocFree c3_def)
-          , bench "C4" $ nfIO (mallocFree c4_def)
-          , bench "C5" $ nfIO (mallocFree c5_def)
-          ]
-      ]
-   , bgroup "sizeOf" $ 
+--   [ bgroup "mallocfree" $ 
+--      [ bgroup "Handwritten" $
+--          [ bench "C1" $ nfIO (mallocFree c1hw_def)
+--          , bench "C2" $ nfIO (mallocFree c2hw_def)
+--          , bench "C3" $ nfIO (mallocFree c3hw_def)
+--          , bench "C4" $ nfIO (mallocFree c4hw_def)
+--          , bench "C5" $ nfIO (mallocFree c5hw_def)
+--          ]
+--      , bgroup "GStorable" $
+--          [ bench "C1" $ nfIO (mallocFree c1_def)
+--          , bench "C2" $ nfIO (mallocFree c2_def)
+--          , bench "C3" $ nfIO (mallocFree c3_def)
+--          , bench "C4" $ nfIO (mallocFree c4_def)
+--          , bench "C5" $ nfIO (mallocFree c5_def)
+--          ]
+--      ]
+   [ bgroup "sizeOf" $ 
        [ bgroup "Handwritten" $
            [ bench "C1" $ nf sizeOf c1hw_def
            , bench "C2" $ nf sizeOf c2hw_def

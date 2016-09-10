@@ -1,5 +1,5 @@
 {-# LANGUAGE DeriveGeneric, DeriveAnyClass #-}
-
+{-# OPTIONS_GHC -fplugin Foreign.Storable.Generic.Plugin #-}
 module TestCases where 
 
 import GHC.Generics (Generic)
