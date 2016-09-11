@@ -60,19 +60,4 @@ executable derive-storable-benchmark
   -- Base language which the package is written in.
   default-language:    Haskell2010
 --  ghc-options:         -ddump-to-file -ddump-simpl -ddump-rule-firings -ddump-parsed -ddump-rules -ddump-rule-rewrites
---                       -dsuppress-module-prefixes -dsuppress-uniques
- 
-executable derive-storable-core
-  main-is: Profiling.hs
- -- LANGUAGE extensions used by modules in this package.
-  -- other-extensions:    
-  
-  -- Other library packages from which modules are imported.
-  build-depends:       base >=4.8 && <4.10, derive-storable, derive-storable-plugin, deepseq
-  hs-source-dirs:      src
-  
-  ghc-options: -ddump-simpl -ddump-to-file
-
-  -- Base language which the package is written in.
-  default-language:    Haskell2010
- 
+--                       -dsuppress-module-prefixes -dsuppress-uniques 
